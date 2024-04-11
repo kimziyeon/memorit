@@ -1,0 +1,101 @@
+main{
+    background-color: #F1F4F9;
+
+    .serchInput{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        form{
+            width: 70%;
+            position: relative;
+            img{
+                position: absolute;
+                top: 25%;
+                left: 5%;
+            }
+            input{
+                width: 100%;
+                height: 50px;
+                border: none;
+                font-size: 18px;
+                border-radius: 10px;
+                text-align: center;
+            }
+            input:focus {outline:none;}
+        }
+    }
+    article{
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        .newMemo{
+            width: 160px;
+            height: 170px;
+            background-color: #fff;
+            position: relative;
+            border-radius: 20px;
+            >p{
+                width: 23px;
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                img{width: 100%;}
+
+            }
+            .memoGray{
+                width: 100%;
+                height: 29px;
+                background-color: #D2D2D4;
+                position: absolute;
+                bottom: 0;
+                border-radius: 0 0 9px 9px;
+
+            }
+
+        }
+        .mapMemo{
+            width: 160px;
+            height: 170px;
+            background-color: #fff;
+            position: relative;
+            border-radius: 20px;
+            .mContents{
+                font-size: 14px;
+                padding: 25px 20px 0;
+                b{
+                    display: block;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+                p{}
+            }
+
+            .memoDate{
+                width: 100%;
+                height: 29px;
+                background-color: #4385F5;
+                position: absolute;
+                bottom: 0;
+                border-radius: 0 0 9px 9px;
+                span{
+                    color: #fff;
+                    display: block;
+                    margin: 8px 0 0 20px;
+                    font-size: 12px;
+                }
+            }
+            .bookmark{
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    }
+}

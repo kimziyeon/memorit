@@ -1,10 +1,12 @@
 import React from 'react';
+import '../style/todo.scss';
+
+
 function Todolist() {
     return (
-        <div className='todo'>
+        <main>
             투두페이지
-        
-        </div>
+        </main>
     );
 }
 
