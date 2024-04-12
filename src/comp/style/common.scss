@@ -1,5 +1,22 @@
 @import './reset.css';
+@import './mixin';
+
 main{
     width: 768px;
     margin: 0 auto;
+    font-size: 18px;
 }
+
+@include res(m){
+    main{
+    width: 600px;
+    }
+}
+
+@include res(s){
+    main{
+    width: 430px;
+    }
+}
+
+

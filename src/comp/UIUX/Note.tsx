@@ -1,19 +1,30 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import '../style/note.scss';
-
-
+import { useRouter } from 'next/router';
+import AddNote from './AddNote';
 
 function Note() {
+
+    const [addNote, setAddNote] = useState(false);
+
+    const addClick =()=>{
+        console.log(addNote)
+        setAddNote(true)
+    }
+
     return (
        <main>
+        {addNote? <AddNote setAddNote={setAddNote}/>: ''}
         <div className='serchInput'>
             <form>
             <img src="/images/search.png" alt="search" />
-            <input type="text" />
+            <input type="text"  placeholder='메모 검색'/>
             </form>
         </div>
-        <article>
-            <div className='newMemo'>
+        <article className='noteArticle'>
+            <div className='newMemo' onClick={addClick}>
                 <p><img src="/images/add.png" alt="memoAdd" /></p>
                 <div className='memoGray'></div>
             </div>

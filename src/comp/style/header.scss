@@ -18,13 +18,18 @@ header{
         background-color: #fff;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         gap: 90px;
         a{
+            border-bottom: 3px solid #ffffff;
             padding: 5px 0;
-        }
-        a:nth-of-type(1){
+            color: #D2D2D4;
+            &.active{
             border-bottom: 3px solid #4385F5;
+            color: #111111;
+
         }
+        }
+
     }
 }

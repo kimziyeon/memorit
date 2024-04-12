@@ -1,101 +1,226 @@
+@import './common.scss';
+
 main{
-    background-color: #F1F4F9;
+    .root{
+        background-color: #F1F4F9;
+    // overflow-y: auto;
+    // overflow-x: hidden;
 
-    .serchInput{
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 0;
-        form{
-            width: 70%;
-            position: relative;
-            img{
-                position: absolute;
-                top: 25%;
-                left: 5%;
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+        .serchInput{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0 20px;
+            > form{
+                position: relative;
+                width: 70%;
+                margin: 0 auto;
+                box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+                img{
+                    position: absolute;
+                    top: 25%;
+                    left: 4%;
+                }
+                input{
+                    width: 100%;
+                    height: 50px;
+                    border: none;
+                    font-size: 18px;
+                    border-radius: 10px;
+                    padding: 0 20px 0 60px;
+                }
+                input:focus {
+                    outline:none;
+                }
             }
-            input{
-                width: 100%;
-                height: 50px;
-                border: none;
-                font-size: 18px;
-                border-radius: 10px;
-                text-align: center;
-            }
-            input:focus {outline:none;}
         }
-    }
-    article{
-        width: 70%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        .newMemo{
-            width: 160px;
-            height: 170px;
-            background-color: #fff;
-            position: relative;
-            border-radius: 20px;
-            >p{
-                width: 23px;
-                position: absolute;
-                top: 45%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                img{width: 100%;}
+        .noteArticle{
+            width: 70%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
 
+            .newMemo{
+                width: 160px;
+                height: 170px;
+                background-color: #fff;
+                position: relative;
+                border-radius: 10px;
+                box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+    
+                >p{
+                    width: 23px;
+                    position: absolute;
+                    top: 45%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    img{width: 100%;}
+    
+                }
+                .memoGray{
+                    width: 100%;
+                    height: 29px;
+                    background-color: #D2D2D4;
+                    position: absolute;
+                    bottom: 0;
+                    border-radius: 0 0 10px 10px;
+    
+                }
+    
             }
-            .memoGray{
+            .mapMemo{
+                width: 160px;
+                height: 170px;
+                background-color: #fff;
+                position: relative;
+                border-radius: 10px;
+                box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+    
+                .mContents{
+                    font-size: 14px;
+                    padding: 20px 20px 0;
+                    b{
+                        display: block;
+                        margin-bottom: 10px;
+                        font-weight: bold;
+                    }
+                    p{
+                        background: linear-gradient(to bottom, #111111, #fff);
+                        color: transparent;
+                        -webkit-background-clip: text;
+                    }
+                }
+    
+                .memoDate{
+                    width: 100%;
+                    height: 29px;
+                    background-color: #4385F5;
+                    position: absolute;
+                    bottom: 0;
+                    border-radius: 0 0 10px 10px;
+                    span{
+                        color: #fff;
+                        display: block;
+                        margin: 8px 0 0 20px;
+                        font-size: 12px;
+                    }
+                }
+                .bookmark{
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                }
+            }
+        }
+        
+        
+            
+        
+        position: relative;
+        .addBack{
+            // background-color: rgba(0, 0%, 0%,0.5);
+            backdrop-filter: brightness(50%);
+            width: 100%;
+            height:100vh;
+            position: absolute;
+            top:0;
+            z-index: 1;
+            
+        }
+        .addMemo{
+            position: absolute;
+            top: 62%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+            width: 70%;
+            height: 490px;
+            background-color: #fff;
+            border-radius: 10px;
+            .addMemoC1{
+                width: 90%;
+                margin: 30px auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 10px;
+                .more{
+                    img{
+                        vertical-align: middle;
+                    }
+                }
+                p{
+                    color: #D2D2D4;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+            .addMemoC2{
+                width: 90%;
+                margin: 0 auto;
+                > form{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    input{
+                        width: 100%;
+                        font-size: 18px;
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border: none;
+                    }
+                    input:focus{
+                        outline:none;
+                    }
+                    textarea{
+                        width: 100%;
+                        font-size: 18px;
+                        padding: 10px;
+                        border: none;
+                        height: 280px;
+                    }
+                    textarea:focus{
+                        outline: none;
+                    }
+                }
+            }
+            .addMemoC3{
                 width: 100%;
-                height: 29px;
+                height: 40px;
                 background-color: #D2D2D4;
                 position: absolute;
+                left: 0;
                 bottom: 0;
-                border-radius: 0 0 9px 9px;
+                border-radius: 0 0 10px 10px;
+                .colorPalette{
+                    position: absolute;
+                    transform: translateY(-50%);
+                    top: 0;
+                    left: 7%;
+                    img{
 
-            }
-
-        }
-        .mapMemo{
-            width: 160px;
-            height: 170px;
-            background-color: #fff;
-            position: relative;
-            border-radius: 20px;
-            .mContents{
-                font-size: 14px;
-                padding: 25px 20px 0;
-                b{
-                    display: block;
-                    margin-bottom: 10px;
-                    font-weight: bold;
+                    }
                 }
-                p{}
-            }
-
-            .memoDate{
-                width: 100%;
-                height: 29px;
-                background-color: #4385F5;
-                position: absolute;
-                bottom: 0;
-                border-radius: 0 0 9px 9px;
-                span{
-                    color: #fff;
-                    display: block;
-                    margin: 8px 0 0 20px;
-                    font-size: 12px;
+                .bookmark{
+                    position: absolute;
+                    transform: translateY(-50%);
+                    right: 8%;
+                    top: 0;
+                    img{}
                 }
-            }
-            .bookmark{
-                position: absolute;
-                bottom: 10px;
-                right: 10px;
             }
         }
     }
+   
 }
+
+
+
