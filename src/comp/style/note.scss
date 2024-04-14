@@ -1,31 +1,32 @@
 @import './common.scss';
 
-main{
-    .root{
-        background-color: #F1F4F9;
-    // overflow-y: auto;
-    // overflow-x: hidden;
+main {
 
-    // &::-webkit-scrollbar {
-    //     display: none;
-    // }
-        .serchInput{
+    .root {
+        background-color: #F1F4F9;
+        padding-bottom: 6%;
+
+
+        .serchInput {
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 40px 0 20px;
-            > form{
+
+            >form {
                 position: relative;
                 width: 70%;
                 margin: 0 auto;
                 box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
-                img{
+
+                img {
                     position: absolute;
                     top: 25%;
                     left: 4%;
                 }
-                input{
+
+                input {
                     width: 100%;
                     height: 50px;
                     border: none;
@@ -33,12 +34,14 @@ main{
                     border-radius: 10px;
                     padding: 0 20px 0 60px;
                 }
+
                 input:focus {
-                    outline:none;
+                    outline: none;
                 }
             }
         }
-        .noteArticle{
+
+        .noteArticle {
             width: 70%;
             margin: 0 auto;
             display: flex;
@@ -47,152 +50,181 @@ main{
             flex-wrap: wrap;
             gap: 20px;
 
-            .newMemo{
+            // 스크롤바
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            // 스크롤바
+
+            .newMemo {
                 width: 160px;
                 height: 170px;
                 background-color: #fff;
                 position: relative;
                 border-radius: 10px;
                 box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
-    
-                >p{
+
+                >p {
                     width: 23px;
                     position: absolute;
                     top: 45%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    img{width: 100%;}
-    
+
+                    img {
+                        width: 100%;
+                    }
+
                 }
-                .memoGray{
+
+                .memoGray {
                     width: 100%;
                     height: 29px;
                     background-color: #D2D2D4;
                     position: absolute;
                     bottom: 0;
                     border-radius: 0 0 10px 10px;
-    
+
                 }
-    
+
             }
-            .mapMemo{
+
+            .mapMemo {
                 width: 160px;
                 height: 170px;
                 background-color: #fff;
                 position: relative;
                 border-radius: 10px;
                 box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
-    
-                .mContents{
+
+                .mContents {
                     font-size: 14px;
                     padding: 20px 20px 0;
-                    b{
+
+                    b {
                         display: block;
                         margin-bottom: 10px;
                         font-weight: bold;
                     }
-                    p{
+
+                    p {
                         background: linear-gradient(to bottom, #111111, #fff);
                         color: transparent;
                         -webkit-background-clip: text;
                     }
                 }
-    
-                .memoDate{
+
+                .memoDate {
                     width: 100%;
                     height: 29px;
                     background-color: #4385F5;
                     position: absolute;
                     bottom: 0;
                     border-radius: 0 0 10px 10px;
-                    span{
+
+                    span {
                         color: #fff;
                         display: block;
                         margin: 8px 0 0 20px;
                         font-size: 12px;
                     }
                 }
-                .bookmark{
+
+                .bookmark {
                     position: absolute;
                     bottom: 10px;
                     right: 10px;
                 }
             }
         }
-        
-        
-            
-        
+
         position: relative;
-        .addBack{
+
+        .addBack {
             // background-color: rgba(0, 0%, 0%,0.5);
             backdrop-filter: brightness(50%);
             width: 100%;
-            height:100vh;
+            height: 100%;
             position: absolute;
-            top:0;
+            top: 0;
             z-index: 1;
-            
+
         }
-        .addMemo{
+
+        .addMemo {
             position: absolute;
             top: 62%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             z-index: 2;
             width: 70%;
             height: 490px;
             background-color: #fff;
             border-radius: 10px;
-            .addMemoC1{
+
+            .addMemoC1 {
                 width: 90%;
                 margin: 30px auto;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 padding: 0 10px;
-                .more{
-                    img{
+
+                .more {
+                    img {
                         vertical-align: middle;
                     }
                 }
-                p{
+
+                p {
                     color: #D2D2D4;
                     font-weight: bold;
                     font-size: 20px;
                 }
             }
-            .addMemoC2{
+
+            .addMemoC2 {
                 width: 90%;
                 margin: 0 auto;
-                > form{
+
+                >form {
                     width: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    input{
+
+                    input {
                         width: 100%;
                         font-size: 18px;
                         padding: 10px;
                         margin-bottom: 10px;
                         border: none;
                     }
-                    input:focus{
-                        outline:none;
+
+                    input:focus {
+                        outline: none;
                     }
-                    textarea{
+
+                    textarea {
                         width: 100%;
                         font-size: 18px;
                         padding: 10px;
                         border: none;
                         height: 280px;
                     }
-                    textarea:focus{
+
+                    textarea:focus {
                         outline: none;
                     }
                 }
             }
-            .addMemoC3{
+
+            .addMemoC3 {
                 width: 100%;
                 height: 40px;
                 background-color: #D2D2D4;
@@ -200,27 +232,66 @@ main{
                 left: 0;
                 bottom: 0;
                 border-radius: 0 0 10px 10px;
-                .colorPalette{
+
+                .colorPalette {
                     position: absolute;
                     transform: translateY(-50%);
                     top: 0;
                     left: 7%;
-                    img{
 
-                    }
+                    img {}
                 }
-                .bookmark{
+
+                .bookmark {
                     position: absolute;
                     transform: translateY(-50%);
                     right: 8%;
-                    top: 0;
-                    img{}
+                    top: 5%;
+
+                    img {}
                 }
             }
         }
+
+        //반응형 반응형 반응형 반응형 반응형 반응형 반응형
+
+        @include res(m) {
+            .serchInput {
+                >form {
+                    width: 90%;
+                }
+            }
+
+            .noteArticle {
+                width: 90%;
+            }
+
+            .addBack {}
+
+            .addMemo {
+                width: 90%;
+            }
+
+        }
+
+        @include res(s) {
+            .serchInput {
+                >form {
+                    width: 80%;
+                }
+            }
+
+            .noteArticle {
+                width: 80%;
+            }
+
+            .addBack {}
+
+            .addMemo {
+                width: 80%;
+            }
+
+        }
     }
-   
+
 }
-
-
-

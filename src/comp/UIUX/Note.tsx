@@ -9,142 +9,206 @@ function Note() {
 
     const [addNote, setAddNote] = useState(false);
 
-    const addClick =()=>{
+    const addClick = () => {
         console.log(addNote)
         setAddNote(true)
     }
 
     return (
-       <main>
-        {addNote? <AddNote setAddNote={setAddNote}/>: ''}
-        <div className='serchInput'>
-            <form>
-            <img src="/images/search.png" alt="search" />
-            <input type="text"  placeholder='메모 검색'/>
-            </form>
-        </div>
-        <article className='noteArticle'>
-            <div className='newMemo' onClick={addClick}>
-                <p><img src="/images/add.png" alt="memoAdd" /></p>
-                <div className='memoGray'></div>
+        <main>
+            {addNote ? <AddNote setAddNote={setAddNote} /> : ''}
+            <div className='serchInput'>
+                <form>
+                    <img src="/images/search.png" alt="search" />
+                    <input type="text" placeholder='메모 검색' />
+                </form>
             </div>
-{/* mapppppppppppppppppppppppppppppppp */}
-            <div className='mapMemo'>
-                <div className='mContents'>
-                    <b>제목 한줄</b>
-                    <p>
-                    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
-                    </p>
+            <article className='noteArticle'>
+                <div className='newMemo' onClick={addClick}>
+                    <p><img src="/images/add.png" alt="memoAdd" /></p>
+                    <div className='memoGray'></div>
                 </div>
-                <div className='memoDate'>
-                    <span>2024-04-11</span>
+                {/* mapppppppppppppppppppppppppppppppp */}
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
                 </div>
-                <div className='bookmark'>
-                    <img src="/images/bookmark.png" alt="bookmarkOff" />
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
                 </div>
-            </div>
-            <div className='mapMemo'>
-            <div className='mContents'>
-                    <b>제목 한줄</b>
-                    <p>
-                    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
-                    </p>
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
                 </div>
-                <div className='memoDate'>
-                    <span>2024-04-11</span>
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
                 </div>
-                <div className='bookmark'>
-                    <img src="/images/bookmark.png" alt="bookmarkOff" />
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
                 </div>
-            </div>
-            <div className='mapMemo'>
-            <div className='mContents'>
-                    <b>제목 한줄</b>
-                    <p>
-                    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
-                    </p>
-                </div>
-                <div className='memoDate'>
-                    <span>2024-04-11</span>
-                </div>
-                <div className='bookmark'>
-                    <img src="/images/bookmark.png" alt="bookmarkOff" />
-                </div>
-            </div>
-            <div className='mapMemo'>
-            <div className='mContents'>
-                    <b>제목 한줄</b>
-                    <p>
-                    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
-                    </p>
-                </div>
-                <div className='memoDate'>
-                    <span>2024-04-11</span>
-                </div>
-                <div className='bookmark'>
-                    <img src="/images/bookmark.png" alt="bookmarkOff" />
-                </div>
-            </div>
-            <div className='mapMemo'>
-            <div className='mContents'>
-                    <b>제목 한줄</b>
-                    <p>
-                    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
-                    </p>
-                </div>
-                <div className='memoDate'>
-                    <span>2024-04-11</span>
-                </div>
-                <div className='bookmark'>
-                    <img src="/images/bookmark.png" alt="bookmarkOff" />
-                </div>
-            </div>
-            <div className='mapMemo'>
-            <div className='mContents'>
-                    <b>제목 한줄</b>
-                    <p>
-                    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
-                    </p>
-                </div>
-                <div className='memoDate'>
-                    <span>2024-04-11</span>
-                </div>
-                <div className='bookmark'>
-                    <img src="/images/bookmark.png" alt="bookmarkOff" />
-                </div>
-            </div>
-            <div className='mapMemo'>
-            <div className='mContents'>
-                    <b>제목 한줄</b>
-                    <p>
-                    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
-                    </p>
-                </div>
-                <div className='memoDate'>
-                    <span>2024-04-11</span>
-                </div>
-                <div className='bookmark'>
-                    <img src="/images/bookmark.png" alt="bookmarkOff" />
-                </div>
-            </div>
-            <div className='mapMemo'>
-            <div className='mContents'>
-                    <b>제목 한줄</b>
-                    <p>
-                    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
-                    </p>
-                </div>
-                <div className='memoDate'>
-                    <span>2024-04-11</span>
-                </div>
-                <div className='bookmark'>
-                    <img src="/images/bookmark.png" alt="bookmarkOff" />
-                </div>
-            </div>
-{/* mapppppppppppppppppppppppppppppppp */}
 
-        </article>
-       </main>
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
+                </div>
+
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
+                </div>
+
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
+                </div>
+
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
+                </div>
+
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
+                </div>
+
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
+                </div>
+
+                <div className='mapMemo'>
+                    <div className='mContents'>
+                        <b>제목 한줄</b>
+                        <p>
+                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+                        </p>
+                    </div>
+                    <div className='memoDate'>
+                        <span>2024-04-11</span>
+                    </div>
+                    <div className='bookmark'>
+                        <img src="/images/bookmark.png" alt="bookmarkOff" />
+                    </div>
+                </div>
+
+                {/* mapppppppppppppppppppppppppppppppp */}
+
+            </article>
+        </main>
     );
 }
 
