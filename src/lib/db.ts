@@ -5,7 +5,7 @@ const pool = {
     host: "127.0.0.1",
     user: "root",
     password: "aa40254037",
-    database: "todolist",
+    database: "todo",
     port: 3306,
 }
 

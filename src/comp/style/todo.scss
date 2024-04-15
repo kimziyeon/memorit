@@ -4,7 +4,6 @@
 main {
 
     .root {
-
         background-color: #F1F4F9;
         padding-bottom: 6%;
 
@@ -17,7 +16,7 @@ main {
             gap: 10px;
 
             h3 {
-                font-size: 18px;
+                font-size: 23px;
                 padding: 10px;
             }
 
@@ -34,7 +33,7 @@ main {
         .todoArticle {
             width: 70%;
             margin: 0 auto;
-
+            overflow: hidden;
             >form {
                 width: 100%;
                 margin: 20px auto;
@@ -72,6 +71,7 @@ main {
             }
 
             .checkList {
+                position: relative;
                 .check {
                     display: flex;
                     align-items: center;
@@ -87,7 +87,64 @@ main {
 
                     p {}
                 }
+                .btnList{
+                    display: none;
+                }
+                .putList{
+                    display: none;
+
+                }
+                .putList.active{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    > form{
+                        width: 100%;
+                        background-color: #fff;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0 20px;
+                        >input {
+                            height: 50px;
+                            border: none;
+                            font-size: 18px;
+                        }
+        
+                        input:focus {
+                            outline: none;
+                        }
+                        button{
+                            border: none;
+                            background-color: #fff;
+                            color:#111;
+                            font-size: 18px;
+                            font-weight: bold;
+                            padding: 0;
+                        }
+                    }
+                }
             }
+
+            .checkList.active{
+                position: relative;
+                .check{
+                        transform: translateX(-25%);
+                }
+                .btnList{
+                    display: block;
+                    position: absolute;
+                    transform: translate(50%, 50%);
+                    top: 0;
+                    right: 12%;
+                    img{
+                        margin: 0 15px;
+                    }
+                }
+            }
+
+            
 
             .pastList {
                 // 스크롤바
@@ -140,7 +197,7 @@ main {
                         display: flex;
                         align-items: center;
                         gap: 10px;
-                        height: 30px;
+                        height: 35px;
                         margin: 5px 0 10px;
                         padding-left: 20px;
 
