@@ -72,20 +72,32 @@ main {
 
             .checkList {
                 position: relative;
-                .check {
+                .checkBox {
                     display: flex;
                     align-items: center;
-                    gap: 10px;
-                    height: 50px;
+                    justify-content: space-between;
+                    min-height: 50px;
                     background-color: #fff;
                     border-radius: 10px;
                     margin: 15px 0;
-                    padding-left: 20px;
+                    padding: 5px 20px;
                     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
 
                     img {}
 
                     p {}
+
+                    .check{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .btnMore{
+                        padding: 10px;
+                        img{
+                            vertical-align: middle;
+                        }
+                    }
                 }
                 .btnList{
                     display: none;
@@ -129,7 +141,7 @@ main {
 
             .checkList.active{
                 position: relative;
-                .check{
+                .checkBox{
                         transform: translateX(-25%);
                 }
                 .btnList{
