@@ -16,6 +16,7 @@ function TodoComp({obj}:any) {
 
 
     const todoContrl = {
+
         todoClick : ()=>{
             setActiveNum(!activeNum) 
         },
@@ -61,7 +62,7 @@ function TodoComp({obj}:any) {
 
                 <div className='checkBox'>
                     <div className='check'>
-                        <img src={obj.complete == 'true' ? '/images/checkOn.png':'/images/checkOff.png'} onClick={()=>{todoContrl.checkHandle()}}/>
+                        <img src={obj.complete == 'true' ? '/images/checkOn.png':'/images/checkOff.png'} onClick={()=>{todoContrl.checkHandle()}}  alt="check"/>
                         <p>{obj.contents}</p>
                     </div>
 
@@ -73,7 +74,6 @@ function TodoComp({obj}:any) {
                 <div className='btnList'>
                     <img src="/images/put.png" alt="수정" onClick={()=>{todoContrl.putClick()}}/>
                     <img src="/images/delete.png" alt="삭제" onClick={()=>{todoContrl.dataDelete()}} />
-
                 </div>
 
                 <div className={activePut?'putList active':'putList'}>

@@ -17,7 +17,6 @@ function Todolist() {
     let todayDOW = format(today,"EEE");
 
     let {data, dataFetch} = useStore();
-   
     let [inputData, setInputData ] = useState('');
 
     let inputRef = useRef<any>();
@@ -51,6 +50,24 @@ function Todolist() {
         //인풋값 입력 후 새로고침
     }
 
+    const todayData = data.filter((obj:any)=>obj.date == todayFormat);
+    const notCheckTodayData = todayData.filter((obj:any)=>obj.complete == "false")
+
+    const pastData = data.filter((obj:any)=>obj.date !== todayFormat);
+
+
+    //지난 날짜
+    let d:any = {}
+    pastData.forEach((obj:any)=>{
+        const {date,complete,contents,id} = obj;
+        if(Object.keys(d).includes(date)){
+            d[date] = [ ...d[date],{id,complete,contents}]
+        }else{
+            d[date] = [{id,complete,contents}]
+        }
+    })
+    let pData = Object.keys(d);
+
 
     return (
         <main className='todo'>
@@ -64,20 +81,21 @@ function Todolist() {
                     <input type="text" placeholder='할 일을 입력하세요' ref={inputRef} onChange={(e)=>{dataAdd(e.target.value)}} />
                     <img src="/images/addBlue.png" alt="addBlue" onClick={onSubmit} />
                 </form>
-                <p>오늘 할 일 : <span>{data.length}</span>개</p>
+
+                <p>오늘 할 일 : {notCheckTodayData.length}개</p>
+
+                {/* <p>오늘 할 일 : <span>{data.length}</span>개</p> */}
                 
-                {data.map((obj:any, k:number)=>(
+                {todayData.map((obj:any, k:number)=>(
             
                     <TodoComp obj={obj} key={k}/>
 
                 ))}
 
                 <div className='pastList'>
-                    {data.map((obj:any,k:number)=>(
-
-                        <TodoPast obj={obj} key={k}/>
-
-                    ))}
+                    
+                    <TodoPast pData={pData} d={d}/>
+                
                 </div>
 
             </article>
