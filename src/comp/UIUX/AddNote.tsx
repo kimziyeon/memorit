@@ -66,8 +66,8 @@ function AddNote({ setAddNote }: any) {
 
             <article className='addMemo'>
                 <div className='addMemoC1'>
-                    <div className='more'>
-                        <img src="/images/more_gray.png" alt="more_gray" />
+                    <div className='iconList'>
+                        <img src="/images/addPhote.png" alt="addPhote" />
                     </div>
                     <p onClick={dataAdd} style={{ color: color }}>저장</p>
                 </div>

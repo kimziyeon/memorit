@@ -101,6 +101,7 @@ main {
                 position: relative;
                 border-radius: 10px;
                 box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+                overflow: hidden;
 
                 .mContents {
                     font-size: 14px;
@@ -148,6 +149,7 @@ main {
             height: 100%;
             position: absolute;
             top: 0;
+            left: 0;
             z-index: 1;
 
         }
@@ -171,10 +173,13 @@ main {
                 justify-content: space-between;
                 padding: 0 10px;
 
-                .more {
+                .iconList {
                     img {
                         vertical-align: middle;
+                        padding: 0 5px;
+                        margin-right: 20px;
                     }
+                    
                 }
 
                 p {
@@ -237,6 +242,15 @@ main {
 
                     img {}
                 }
+                
+                .notedate{
+                    position: absolute;
+                    transform: translateY(50%);
+                    top: 15%;
+                    left: 5%;
+                    color: #fff;
+                    font-size: 14px;
+                }
 
                 .bookmark {
                     position: absolute;
@@ -253,7 +267,7 @@ main {
 
         @include res(m) {
             .serchInput {
-                >form {
+                .searchForm {
                     width: 90%;
                 }
             }

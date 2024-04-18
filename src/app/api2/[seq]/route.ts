@@ -1,23 +1,26 @@
 import {queryExecute} from '@/lib/db';
 import { NextRequest, NextResponse } from 'next/server';
 
-// export async function DELETE(req:any,{params}:any){
-//     console.log(params.seq)
-//     const data = await queryExecute('delete from todolist where id=?',[params.seq]);
+export async function DELETE(req:any,{params}:any){
+    console.log(params.seq)
+    const data2 = await queryExecute('delete from note where id=?',[params.seq]);
     
-//     return NextResponse.json(data);
-// }
+    return NextResponse.json(data2);
+}
 
-// export async function PUT(req:any,{params}:any){
-//     let d = await req.json();
-//     let value = params.seq;
-//     let data:any = {}
+export async function PUT(req:any,{params}:any){
+    let d = await req.json();
+    let value = params.seq;
+    let data2:any = {}
 
-//     if(d.complete){
-//         data = await queryExecute('update todolist set complete=? where id=?',[d.complete,value]);
-//     } else{
-//         data = await queryExecute('update todolist set contents=? where id=?',[d.contents,value]);
-//     }
     
-//     return NextResponse.json(data);
-// }
+    data2 = await queryExecute('update note set title=?,contents=?,color=?,bookmark=? where id=?',[d.title,d.contents,d.color,d.bookmark,value]);
+    return NextResponse.json(data2);
+}
+
+
+
+
+
+// 'update note set complete=? where id=?'  note확인!!!!!!!!!!!!!!!
+

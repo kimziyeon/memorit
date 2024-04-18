@@ -6,14 +6,18 @@ import { useStore } from '../store/note_store';
 import {useEffect, useState, useRef} from 'react';
 import AddNote from './AddNote';
 import NoteComp from './NoteComp';
+import NoteSearch from './NoteSearch';
 
 function Note() {
 
     const {data2, dataFetch2} = useStore();
     const [addNote, setAddNote] = useState(false);
+    const [searchData, setSearchData] = useState([]);
 
+
+    
     const addClick = () => {
-        console.log(addNote)
+        // console.log(addNote)
         setAddNote(true)
     }
 
@@ -23,23 +27,36 @@ function Note() {
     },[])
 
     
+    useEffect(()=>{
+        setSearchData(data2)
+        // console.log(searchData)
+    },[data2])
+
+
+    const sortedData = [...searchData].sort((a: any, b: any) => {
+        const dateA = new Date(a.date.replace(/\./g, '/'));
+        const dateB = new Date(b.date.replace(/\./g, '/'));
+        return dateB.getTime() - dateA.getTime();
+    });
+
+    const sorteDataBook = sortedData.sort((a:any, b:any) => (a.bookmark == "true" && b.bookmark == "false") ? -1 : 0);
+
 
     return (
         <main>
             {addNote ? <AddNote setAddNote={setAddNote} /> : ''}
+
             <div className='serchInput'>
-                <form>
-                    <img src="/images/search.png" alt="search" />
-                    <input type="text" placeholder='메모 검색' />
-                </form>
+                <NoteSearch data2={data2} setSearchData={setSearchData}/>
             </div>
+
             <article className='noteArticle'>
                 <div className='newMemo' onClick={addClick}>
                     <p><img src="/images/add.png" alt="memoAdd" /></p>
                     <div className='memoGray'></div>
                 </div>
 
-                {data2.map((obj:any, k:number)=>(
+                {sorteDataBook.map((obj:any, k:number)=>(
                     
                     <NoteComp obj={obj}  key={k}/>
                 ))

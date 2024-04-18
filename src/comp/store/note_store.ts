@@ -15,12 +15,12 @@ export const useStore = create<any>((set:any)=>{
             switch(type){
                 case "all" : note = await request.get('/'); 
                 break;
-                // case "delete" : await request.delete(`/${colum}`); 
-                // break;
+                case "delete" : await request.delete(`/${colum}`); 
+                break;
                 case "post" : await request.post('/',colum);
                 break;
-                // case "update" : await request.put(`/${colum.id}`,colum);
-                // break;
+                case "update" : await request.put(`/${colum.id}`,colum);
+                break;
             }
    
 
@@ -28,23 +28,21 @@ export const useStore = create<any>((set:any)=>{
             set( (state:any)=>{
 
                 if(type=='delete'){
-                    // todo.data = state.data.filter((obj:any) => obj.id != colum)
+                    note.data = state.data2.filter((obj:any) => obj.id != colum)
                 } else if(type=='post'){
                    note.data = [...state.data2,colum]
                 }
 
-                // else if (type == 'update'){
-                //     let d = state.data.filter((obj:any)=>obj.id == colum.id)                    
-                //     if(colum.complete){
-                //          d[0].complete = colum.complete;
-                //          todo.data = state.data;
-                //     } else{
-                //         d[0].contents = colum.contents;
-                //         todo.data = state.data;
-                //     }
-                // }
-                
-                return {data2 : note.data}
+                else if (type == 'update'){
+                    let d = state.data2.filter((obj:any)=>obj.id == colum.id)
+                    d[0].title = colum.title;
+                    d[0].contents = colum.contents;
+                    d[0].color = colum.color;
+                    d[0].bookmark = colum.bookmark;
+
+                    note.data = state.data2;
+                }
+                return {data2 : note.data};
             })
         }
     }
