@@ -13,7 +13,8 @@ function TodoPast({pData,d}:any) {
     const sortedData = [...pData].sort((a: any, b: any) => new Date(b).getTime() - new Date(a).getTime());
     
 
-    const checkHandle = (obj:any)=>{
+    const pastDataCheck = (obj:any)=>{
+
         setCheck(!check)
 
         let upCheckValue ={
@@ -21,6 +22,11 @@ function TodoPast({pData,d}:any) {
             complete : String(!check)
         }
         dataFetch('update',upCheckValue)
+    }
+
+    const pastDataDelete= (obj:any)=>{
+        // console.log('click'+obj.id)
+        dataFetch('delete',obj.id)
     }
 
 
@@ -34,9 +40,11 @@ function TodoPast({pData,d}:any) {
                         {Array.from(new Set(d[obj])).map((item: any, k: number) => (
 
                             <div key={k} className='past'>
-                                <img src={item.complete == 'true' ? '/images/checkOn.png':'/images/checkOff.png'} onClick={()=>{checkHandle(item)}} alt="check" />
+                                <img src={item.complete == 'true' ? '/images/checkOn.png':'/images/checkOff.png'} onClick={()=>{pastDataCheck(item)}}  className='pastCheck'alt="check" />
                                 <p>{item.contents}</p>
+                                <img src='/images/delete_gray.png' onClick={()=>{pastDataDelete(item)}} className='pastDelete' alt="delete"/>
                             </div>
+                            
 
                         ))}
                     </div>

@@ -213,11 +213,15 @@ main {
                         margin: 5px 0 10px;
                         padding-left: 20px;
 
-                        img {}
+                        .pastCheck {}
 
                         p {
                             color: #D2D2D4;
 
+                        }
+                        .pastDelete{
+                            width: 15px;
+                            margin-left: 10px;
                         }
                     }
                 }
