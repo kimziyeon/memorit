@@ -8,10 +8,10 @@ import NoteView from './NoteView';
 
 function NoteComp({ obj }: any) {
 
-    const [noteView, setNoteView] =useState(false);
-    
-    const NoteViewClick = ()=>{
-        
+    const [noteView, setNoteView] = useState(false);
+
+    const NoteViewClick = () => {
+
         // console.log(obj)
         setNoteView(true)
 
@@ -19,12 +19,21 @@ function NoteComp({ obj }: any) {
 
     return (
         <>
-            {noteView? <NoteView setNoteView={setNoteView} obj={obj}/> :''}
-            <div className='mapMemo' onClick={()=>{NoteViewClick()}}>
+            {noteView ? <NoteView setNoteView={setNoteView} obj={obj} /> : ''}
+            <div className='mapMemo' onClick={() => { NoteViewClick() }}>
                 <div className='mContents'>
-                    <b>{obj.title}</b>
-                    <p>{obj.contents}</p>
+                    <b>{obj.title ? obj.title : "제목 없음"}</b>
+                    <p>{obj.contents ? obj.contents : "내용 없음"}</p>
                 </div>
+
+                {
+                    obj.url &&
+                    <div className='imgIcon'>
+                        <img src="/images/img.png" alt="imgError" />
+                    </div>
+                }
+
+
 
                 <div className='memoDate' style={{ backgroundColor: obj.color }}>
                     <span>{obj.date}</span>

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useStore } from '../store/note_store';
 import Upload from '../service/Upload';
 
-import { ref, uploadBytes,  getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "@/lib/firebase";
 
 
@@ -29,13 +29,13 @@ function AddNote({ setAddNote }: any) {
     }
 
     //데이터 추가
-    const dataAdd = async() => {
+    const dataAdd = async () => {
 
         let num = Date.now()
-        let url='';
-        if(file){
-            const storageRef = ref(storage, num + "/"+file.name);   
-            const a = await uploadBytes(storageRef, file)       
+        let url = '';
+        if (file) {
+            const storageRef = ref(storage, num + "/" + file.name);
+            const a = await uploadBytes(storageRef, file)
             url = await getDownloadURL(ref(storage, a.metadata.fullPath));
         }
         //파이어베이스 업로드 이미지 들어가는 함수! 폴더이름,파일이름,이미지 url주소
@@ -72,35 +72,39 @@ function AddNote({ setAddNote }: any) {
     const bookMarkClick = () => {
         setBookMark(!bookMark)
     }
-//=====================여기서부터 파이어베이스입니다===========================
+    //=====================여기서부터 파이어베이스입니다===========================
 
-let [detail,setDetail]= useState(false);
-let [preImg,setPreImg] = useState('');
+    let [detail, setDetail] = useState(false);
+    let [preImg, setPreImg] = useState('');
 
-let [file,setFile] = useState<any>(null);
+    let [file, setFile] = useState<any>(null);
+
+    const detailView = () => {
+        setDetail(true)
+    }
 
 
-const detail_del=()=>{
-    setPreImg('')
-    setDetail(false)
-    setFile(null)
-}
+    const detailDelete = () => {
+        setPreImg('')
+        setDetail(false)
+        setFile(null)
+    }
 
-//====================여기까지 파이어베이스였습니다.===============================
+    //====================여기까지 파이어베이스였습니다.===============================
 
     return (
         <>
 
             {
-                detail? 
-                <>
-                    <div className='img_detail_back' onClick={()=>{setDetail(false)}}>
-                    </div> 
-                    <div className='img_detail'>
-                    <p><img src={preImg} onClick={()=>{setDetail(false)}}/></p>
-                    <img src="/images/del_white.png" alt="" onClick={detail_del} />
-                </div>
-                </>
+                detail ?
+                    <>
+                        <div className='detailImgBack' onClick={() => { setDetail(false) }}>
+                        </div>
+                        <div className='detailImg'>
+                            <p><img src={preImg} onClick={() => { setDetail(false) }} /></p>
+                            <img src="/images/delete_gray.png" alt="delete" onClick={detailDelete} />
+                        </div>
+                    </>
                     : ''
             }
 
@@ -109,20 +113,16 @@ const detail_del=()=>{
 
             <article className='addMemo'>
                 <div className='addMemoC1'>
-                    
-                    <Upload setFile={setFile} file={file} setPreImg={setPreImg} />
-                    {/* <div className='iconList'>
-                        <img src="/images/addPhote.png" alt="addPhote" />
-                    </div> */}
 
+                    <Upload setFile={setFile} file={file} setPreImg={setPreImg} />
 
                     <p onClick={dataAdd} style={{ color: color }}>저장</p>
                 </div>
                 <div className='addMemoC2'>
                     {
-                        preImg?
-                        <p className='imgAdd'><img src={preImg} alt="preImg" /></p>
-                        :''
+                        preImg ?
+                            <p className='imgAdd'><img src={preImg} alt="preImg" onClick={() => { detailView() }} /></p>
+                            : ''
                     }
                     <form onSubmit={submit}>
                         <input type="text" placeholder='제목을 입력하세요.' onChange={(e) => { setTitle(e.target.value) }} />
