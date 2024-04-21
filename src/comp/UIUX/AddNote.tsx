@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import '../style/note.scss';
 import { format } from 'date-fns';
@@ -76,7 +78,6 @@ function AddNote({ setAddNote }: any) {
 
     let [detail, setDetail] = useState(false);
     let [preImg, setPreImg] = useState('');
-
     let [file, setFile] = useState<any>(null);
 
     const detailView = () => {
@@ -114,7 +115,9 @@ function AddNote({ setAddNote }: any) {
             <article className='addMemo'>
                 <div className='addMemoC1'>
 
-                    <Upload setFile={setFile} file={file} setPreImg={setPreImg} />
+                    <div className='iconBlock'>
+                        <Upload setFile={setFile} file={file} setPreImg={setPreImg} />
+                    </div>
 
                     <p onClick={dataAdd} style={{ color: color }}>저장</p>
                 </div>

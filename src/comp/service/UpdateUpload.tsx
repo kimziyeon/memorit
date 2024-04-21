@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from 'react';
 
-function UpdateUpload() {
+function UpdateUpload({ setFile, file, setPreImg }: any) {
 
 
 
@@ -12,8 +12,6 @@ function UpdateUpload() {
                 <img src="/images/addPhote.png" alt="addPhoto" />
                 <input className='upload' type="file" style={{ display: "none" }} name='photo' />
             </form>
-            <img src="/images/delete_gray.png" alt="delete" />
-
         </div>
     );
 }

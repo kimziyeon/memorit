@@ -177,6 +177,7 @@ main {
             width: 100%;
             position: absolute;
             top: 0;
+            left: 0;
             transform: translateY(50%);
             z-index: 21;
 
@@ -229,22 +230,23 @@ main {
                 justify-content: space-between;
                 padding: 0 10px;
 
-                .iconList {
+                .iconBlock {
+
                     display: flex;
                     align-items: center;
                     gap: 20px;
 
-                    form {
-                        img {
-                            vertical-align: middle;
+                    .iconList {
 
+                        form {
+                            img {
+                                vertical-align: middle;
+
+                            }
+
+                            input {}
                         }
 
-                        input {}
-                    }
-
-                    >img {
-                        vertical-align: middle;
                     }
                 }
 

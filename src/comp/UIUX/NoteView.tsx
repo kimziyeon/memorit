@@ -77,9 +77,17 @@ function NoteView({ setNoteView, obj }: any) {
     //========================================================
 
     const [detail, setDetail] = useState(false);
+    let [preImg, setPreImg] = useState('');
+    let [file, setFile] = useState<any>(null);
 
     const detailView = () => {
         setDetail(true)
+    }
+
+    const detailDelete = () => {
+        setPreImg('')
+        setDetail(false)
+        setFile(null)
     }
 
 
@@ -89,11 +97,11 @@ function NoteView({ setNoteView, obj }: any) {
             {
                 detail ?
                     <>
-                        <div className='detailImgBack' >
+                        <div className='detailImgBack' onClick={() => { setDetail(false) }}>
                         </div>
                         <div className='detailImg'>
                             <p><img src={upUrl} alt="imgError" /></p>
-                            <img src="/images/delete_gray.png" alt="delete" />
+                            <img src="/images/delete_gray.png" alt="delete" onClick={detailDelete} />
                         </div>
                     </>
                     : ''
@@ -105,7 +113,11 @@ function NoteView({ setNoteView, obj }: any) {
             <article className='addMemo'>
                 <div className='addMemoC1'>
 
-                    <UpdateUpload />
+                    <div className='iconBlock'>
+                        <UpdateUpload setFile={setFile} file={file} setPreImg={setPreImg} />
+                        <img src="/images/delete_gray.png" alt="delete" onClick={() => { noteDelete() }} />
+                    </div>
+
 
                     <p style={{ color: obj.color }} onClick={() => { noteUpdateValue() }}>저장</p>
                 </div>
