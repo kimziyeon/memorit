@@ -61,6 +61,7 @@ function NoteView({ setNoteView, obj }: any) {
 
     const noteUpdateValue = () => {
 
+
         let updateValue = {
             id: obj.id,
             title: upInput,
@@ -114,7 +115,7 @@ function NoteView({ setNoteView, obj }: any) {
                 <div className='addMemoC1'>
 
                     <div className='iconBlock'>
-                        <UpdateUpload setFile={setFile} file={file} setPreImg={setPreImg} />
+                        <UpdateUpload setFile={setFile} file={file} setPreImg={setPreImg} upUrl={upUrl} />
                         <img src="/images/delete_gray.png" alt="delete" onClick={() => { noteDelete() }} />
                     </div>
 
