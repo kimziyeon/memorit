@@ -1,22 +1,25 @@
 @import './reset.css';
 @import './mixin';
 
-main{
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Pacifico&display=swap');
+
+
+
+main {
     width: 768px;
     margin: 0 auto;
     font-size: 18px;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
-@include res(m){
-    main{
-    width: 600px;
+@include res(m) {
+    main {
+        width: 600px;
     }
 }
 
-@include res(s){
-    main{
-    width: 430px;
+@include res(s) {
+    main {
+        width: 430px;
     }
 }
-
-

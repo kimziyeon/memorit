@@ -2,7 +2,6 @@
 import React, { useRef } from 'react';
 
 function UpdateUpload({ setFile, file, setPreImg, upUrl }: any) {
-
     let photo = useRef<any>(null);
 
     const refClick = () => {

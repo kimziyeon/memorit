@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 
 function Upload({ setFile, file, setPreImg }: any) {
     let photo = useRef<any>(null);
+
     const refClick = () => {
         if (file != undefined) {
             alert("이미지는 1개만 저장할 수 있습니다.");

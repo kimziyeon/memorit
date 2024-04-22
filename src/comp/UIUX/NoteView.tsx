@@ -6,7 +6,7 @@ import { useStore } from '../store/note_store';
 import { useEffect, useState, useRef } from 'react';
 import UpdateUpload from '../service/UpdateUpload';
 
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { ref, listAll, getDownloadURL, deleteObject, uploadBytes } from "firebase/storage";
 import { storage } from "@/lib/firebase";
 
 
@@ -59,20 +59,28 @@ function NoteView({ setNoteView, obj }: any) {
     }
 
 
-    const noteUpdateValue = () => {
+    const noteUpdateValue = async (id: number) => {
 
+        let url = '';
+        if (file) {
+            const storageRef = ref(storage, obj.id + "/" + file.name);
+            const a = await uploadBytes(storageRef, file)
+            url = await getDownloadURL(ref(storage, a.metadata.fullPath));
+        } else if (obj.url) {
+            url = obj.url
+        }
 
         let updateValue = {
             id: obj.id,
             title: upInput,
             contents: upTextarea,
             color: upColor,
-            bookmark: upBookmark
+            bookmark: upBookmark,
+            url: upUrl
         }
         // console.log(updateValue,"updatedata")
-        dataFetch2('update', updateValue)
-
-        setNoteView(false)
+        dataFetch2('update', updateValue);
+        setNoteView(false);
     }
 
     //========================================================
@@ -86,9 +94,36 @@ function NoteView({ setNoteView, obj }: any) {
     }
 
     const detailDelete = () => {
-        setPreImg('')
-        setDetail(false)
-        setFile(null)
+        // setPreImg('')
+        // setDetail(false)
+        // setFile(null)
+
+        deleteObject(ref(storage, imgList[0].fullPath));
+        obj.url = '';
+        setDetail(false);
+        setImgList((item: any) => {
+            return item.filter((obj: any) => obj.fullPath != imgList[0].fullPath)
+        })
+    }
+    const [imgList, setImgList] = useState<any>([]);
+
+    async function getImages() {
+        setDetail(true)
+        const storageRef = ref(storage, String(obj.id));
+        listAll(storageRef)
+            .then(async (res) => {
+                let imgArr: any = [];
+                for (let value of res.items) {
+                    const url = await getDownloadURL(value);
+                    imgArr.push({ url, fullPath: value.fullPath })
+                }
+                setImgList(imgArr)
+                if (imgList[0] == undefined) {
+                    return <p>로딩중</p>
+                }
+            });
+
+
     }
 
 
@@ -120,7 +155,7 @@ function NoteView({ setNoteView, obj }: any) {
                     </div>
 
 
-                    <p style={{ color: obj.color }} onClick={() => { noteUpdateValue() }}>저장</p>
+                    <p style={{ color: obj.color }} onClick={() => { noteUpdateValue(obj.id) }}>저장</p>
                 </div>
                 <div className='addMemoC2'>
 
