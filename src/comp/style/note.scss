@@ -3,11 +3,12 @@
 main {
 
     .root {
+        width: 100%;
         background-color: #F1F4F9;
         padding-bottom: 6%;
 
-
         .serchInput {
+            width: 100%;
             height: 50px;
             display: flex;
             align-items: center;
@@ -16,7 +17,7 @@ main {
 
             >form {
                 position: relative;
-                width: 70%;
+                width: 80%;
                 margin: 0 auto;
                 box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
 
@@ -42,13 +43,13 @@ main {
         }
 
         .noteArticle {
-            width: 70%;
+            width: 80%;
             margin: 0 auto;
             display: flex;
             justify-content: start;
             align-content: flex-start;
             flex-wrap: wrap;
-            gap: 28px;
+            gap: 3%;
 
             // 스크롤바
             height: 100vh;
@@ -112,6 +113,14 @@ main {
                         display: block;
                         margin-bottom: 10px;
                         font-weight: bold;
+
+                        //2줄 ...말 줄임
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        word-break: break-word;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2; // 원하는 라인수
+                        -webkit-box-orient: vertical
                     }
 
                     p {}
@@ -188,9 +197,10 @@ main {
 
             p {
                 width: 100%;
-
+                height: 100%;
                 >img {
-                    width: 100%;
+                width: 100%;
+
                 }
             }
 
@@ -349,53 +359,51 @@ main {
                 }
             }
         }
+    }
+}
 
-        //반응형 반응형 반응형 반응형 반응형 반응형 반응형
 
-        @include res(m) {
-            .serchInput {
-                .searchForm {
-                    width: 90%;
-                }
-            }
+//반응형 반응형 반응형 반응형 반응형 반응형 반응형
 
-            .noteArticle {
-                width: 90%;
-            }
-
-            .detailImg {
-                top: 5%;
-            }
-
-            .addBack {}
-
-            .addMemo {
-                width: 90%;
-                top: 45%;
-            }
-
-        }
-
-        @include res(s) {
-            .serchInput {
-                >form {
+@include res(xl){
+    main{
+        width: 100%;
+        .root{
+            .serchInput{
+                >form{
                     width: 80%;
                 }
             }
-
             .noteArticle {
-                width: 80%;
-                gap: 20px;
+            width: 80%;
+                
 
             }
-
-            .addBack {}
-
-            .addMemo {
-                width: 80%;
-            }
-
         }
     }
-
 }
+
+@include res(s){
+    main{
+        .root{
+            .serchInput{
+                >form{
+                }
+            }
+            .noteArticle {
+                gap: 1% 2%;
+
+                .newMemo {
+                    width: 150px;
+                    height: 160px;
+                }
+                .mapMemo {
+                    width: 150px;
+                    height: 160px;
+                }
+
+            }
+        }
+    }
+}
+

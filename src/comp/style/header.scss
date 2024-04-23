@@ -37,10 +37,5 @@ header {
 
     }
 
-    @include res(s) {
-        h1 {
-            text-align: left;
-            padding-left: 10%
-        }
-    }
+   
 }

@@ -1,10 +1,12 @@
 $s-breakpoint: 430px;
 $m-breakpoint: 600px;
 $l-breakpoint: 768px;
+$xl-breakpoint: 1140px;
 
 @mixin res($screen) {
+
   @if ($screen =='s') {
-    @media screen and (max-width: $s-breakpoint) {
+   @media screen and (max-width: $s-breakpoint) {
       @content;
     }
   }
@@ -20,7 +22,11 @@ $l-breakpoint: 768px;
       @content;
     }
   }
-
+  @if ($screen =='xl') {
+    @media screen and (max-width: $xl-breakpoint){
+      @content;
+    }
+  }
   @if ($screen) {
     @media screen and (max-width: $screen) {
       @content;

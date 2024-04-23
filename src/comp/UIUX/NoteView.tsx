@@ -18,7 +18,6 @@ function NoteView({ setNoteView, obj }: any) {
     let [upTextarea, setUpTextarea] = useState(obj.contents);
     let [upBookmark, setUpBookmark] = useState(obj.bookmark);
     let [upColor, setUpColor] = useState(obj.color);
-    let [upUrl, setUpUrl] = useState(obj.url);
 
     let [colorNum, setColorNum] = useState(0);
     let colorPalette = [
@@ -66,8 +65,10 @@ function NoteView({ setNoteView, obj }: any) {
             const storageRef = ref(storage, obj.id + "/" + file.name);
             const a = await uploadBytes(storageRef, file)
             url = await getDownloadURL(ref(storage, a.metadata.fullPath));
+            console.log('file')
         } else if (obj.url) {
-            url = obj.url
+            url = obj.url;
+            console.log(obj.url,"asdasd")
         }
 
         let updateValue = {
@@ -76,7 +77,7 @@ function NoteView({ setNoteView, obj }: any) {
             contents: upTextarea,
             color: upColor,
             bookmark: upBookmark,
-            url: upUrl
+            url: url
         }
         // console.log(updateValue,"updatedata")
         dataFetch2('update', updateValue);
@@ -89,18 +90,14 @@ function NoteView({ setNoteView, obj }: any) {
     let [preImg, setPreImg] = useState('');
     let [file, setFile] = useState<any>(null);
 
-    const detailView = () => {
-        setDetail(true)
-    }
-
     const detailDelete = () => {
         // setPreImg('')
         // setDetail(false)
         // setFile(null)
 
         deleteObject(ref(storage, imgList[0].fullPath));
-        obj.url = '';
         setDetail(false);
+        obj.url = '';
         setImgList((item: any) => {
             return item.filter((obj: any) => obj.fullPath != imgList[0].fullPath)
         })
@@ -122,10 +119,10 @@ function NoteView({ setNoteView, obj }: any) {
                     return <p>로딩중</p>
                 }
             });
-
-
-    }
-
+            
+        }
+        
+        
 
     return (
         <>
@@ -136,7 +133,7 @@ function NoteView({ setNoteView, obj }: any) {
                         <div className='detailImgBack' onClick={() => { setDetail(false) }}>
                         </div>
                         <div className='detailImg'>
-                            <p><img src={upUrl} alt="imgError" /></p>
+                            <p><img src={obj.url} alt="imgError" /></p>
                             <img src="/images/delete_gray.png" alt="delete" onClick={detailDelete} />
                         </div>
                     </>
@@ -150,20 +147,25 @@ function NoteView({ setNoteView, obj }: any) {
                 <div className='addMemoC1'>
 
                     <div className='iconBlock'>
-                        <UpdateUpload setFile={setFile} file={file} setPreImg={setPreImg} upUrl={upUrl} />
+                        <UpdateUpload setFile={setFile} file={file} setPreImg={setPreImg} upUrl={obj.url} />
                         <img src="/images/delete_gray.png" alt="delete" onClick={() => { noteDelete() }} />
                     </div>
 
 
                     <p style={{ color: obj.color }} onClick={() => { noteUpdateValue(obj.id) }}>저장</p>
                 </div>
+
                 <div className='addMemoC2'>
 
                     {
-                        upUrl &&
-                        <p className='imgAdd'><img src={upUrl} alt="preImg" onClick={() => { detailView() }} /></p>
-
+                        obj.url ?
+                        <p className='imgAdd'><img src={obj.url} alt="preImg" onClick={() => { getImages() }} /></p> :''
                     }
+                    {/* 이미지 삭제 */}
+
+                    {preImg ? <p  className='imgAdd'><img src={preImg} alt="preImg" onClick={()=>getImages()} /></p> : ''} 
+                    {/* 이미지 없으면 안보임 (프론트) */}
+
 
                     <form onSubmit={submit}>
                         <input type="text" value={upInput} onChange={(e) => { setUpInput(e.target.value) }} />

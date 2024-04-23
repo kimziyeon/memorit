@@ -14,7 +14,7 @@ export async function PUT(req:any,{params}:any){
     let data2:any = {}
 
     
-    data2 = await queryExecute('update note set title=?,contents=?,color=?,bookmark=? where id=?',[d.title,d.contents,d.color,d.bookmark,value]);
+    data2 = await queryExecute('update note set title=?,contents=?,color=?,bookmark=?,url=? where id=?',[d.title,d.contents,d.color,d.bookmark,d.url,value]);
     return NextResponse.json(data2);
 }
 

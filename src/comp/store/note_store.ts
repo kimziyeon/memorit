@@ -39,7 +39,7 @@ export const useStore = create<any>((set:any)=>{
                     d[0].contents = colum.contents;
                     d[0].color = colum.color;
                     d[0].bookmark = colum.bookmark;
-
+                    d[0].url = colum.url;
                     note.data = state.data2;
                 }
                 return {data2 : note.data};
