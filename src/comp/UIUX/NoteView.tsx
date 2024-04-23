@@ -168,8 +168,8 @@ function NoteView({ setNoteView, obj }: any) {
 
 
                     <form onSubmit={submit}>
-                        <input type="text" value={upInput} onChange={(e) => { setUpInput(e.target.value) }} />
-                        <textarea name="내용" value={upTextarea} onChange={(e) => { setUpTextarea(e.target.value) }}></textarea>
+                        <input type="text" value={upInput} placeholder='제목을 입력하세요.' onChange={(e) => { setUpInput(e.target.value) }} />
+                        <textarea name="내용" value={upTextarea} placeholder='내용을 입력하세요.' onChange={(e) => { setUpTextarea(e.target.value) }}></textarea>
                     </form>
 
                     <div className='addMemoC3' style={{ background: upColor }} >

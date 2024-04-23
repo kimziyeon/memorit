@@ -78,7 +78,7 @@ function Todolist() {
             </div>
             <article className='todoArticle'>
                 <form onSubmit={onSubmit}>
-                    <input type="text" placeholder='할 일을 입력하세요' ref={inputRef} onChange={(e)=>{dataAdd(e.target.value)}} />
+                    <input type="text" placeholder='오늘 할 일을 입력하세요' ref={inputRef} onChange={(e)=>{dataAdd(e.target.value)}} />
                     <img src="/images/addBlue.png" alt="addBlue" onClick={onSubmit} />
                 </form>
 

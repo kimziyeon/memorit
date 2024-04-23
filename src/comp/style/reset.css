@@ -47,8 +47,11 @@ a{
 }
 input{
 	padding:0;
+
 }
 
 *{
     box-sizing: border-box;
+    color: #111;
+	font-family: "Noto Sans KR", sans-serif;
 }
