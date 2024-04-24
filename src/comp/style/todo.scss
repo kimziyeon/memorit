@@ -143,7 +143,7 @@ main {
             .checkList.active{
                 position: relative;
                 .checkBox{
-                        transform: translateX(-25%);
+                        transform: translateX(-28%);
                 }
                 .btnList{
                     display: block;
@@ -151,6 +151,7 @@ main {
                     transform: translate(50%, 50%);
                     top: 0;
                     right: 12%;
+                    transition: 0.5s;
                     img{
                         margin: 0 15px;
                     }
