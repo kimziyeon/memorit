@@ -59,6 +59,7 @@ function NoteView({ setNoteView, obj }: any) {
 
 
     const noteUpdateValue = async (id: number) => {
+        alert('저장되었습니다.')
 
         let url = '';
         if (file) {

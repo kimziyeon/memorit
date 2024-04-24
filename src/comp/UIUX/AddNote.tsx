@@ -32,7 +32,7 @@ function AddNote({ setAddNote }: any) {
 
     //데이터 추가
     const dataAdd = async () => {
-
+        alert('저장되었습니다.')
         let num = Date.now()
         let url = '';
         if (file) {
