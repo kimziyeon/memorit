@@ -59,7 +59,7 @@ function NoteView({ setNoteView, obj }: any) {
 
 
     const noteUpdateValue = async (id: number) => {
-        alert('저장되었습니다.')
+        alert('저장중입니다. 확인을 누르고 잠시만 기다려주세요')
 
         let url = '';
         if (file) {
