@@ -19,7 +19,7 @@ function AddNote({ setAddNote }: any) {
     let todayFormat = format(today, "yyyy.MM.dd");
     let [title, setTitle] = useState('');
     let [contents, setContents] = useState('');
-    let [colorNum, setColorNum] = useState(1);
+    // let [colorNum, setColorNum] = useState(1);
     let [color, setColor] = useState('#D2D2D4');
     let colorPalette = [
         '#D2D2D4', '#4385F5', '#34A853', '#FCBC05', '#E8463B'
@@ -63,7 +63,6 @@ function AddNote({ setAddNote }: any) {
     const colorClick = (colorNum :number) => {
         // console.log('click'+colorPalette[0])
         // console.log(colorPalette[colorNum])
-
         setColor(colorPalette[colorNum])
 
     }
