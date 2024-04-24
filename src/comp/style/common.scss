@@ -7,4 +7,12 @@ main {
     font-size: 18px;
     font-family: "Noto Sans KR", sans-serif;
     font-weight:normal;
+        .root{
+            .loading{
+                position: fixed;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+            }
+    }
 }
