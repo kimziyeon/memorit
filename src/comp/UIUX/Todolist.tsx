@@ -6,6 +6,7 @@ import { useStore } from '../store/todo_store';
 import {useEffect, useState, useRef} from 'react';
 import TodoComp from './TodoComp';
 import TodoPast from './TodoPast';
+import Loading from './Loading';
 
 
 function Todolist() {
@@ -67,6 +68,12 @@ function Todolist() {
         }
     })
     let pData = Object.keys(d);
+
+
+    if(data.length==0){
+        return <Loading/>
+    }
+
 
 
     return (

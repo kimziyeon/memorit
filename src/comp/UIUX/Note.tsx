@@ -7,6 +7,7 @@ import {useEffect, useState, useRef} from 'react';
 import AddNote from './AddNote';
 import NoteComp from './NoteComp';
 import NoteSearch from './NoteSearch';
+import Loading from './Loading';
 
 function Note() {
 
@@ -40,6 +41,12 @@ function Note() {
     });
 
     const sorteDataBook = sortedData.sort((a:any, b:any) => (a.bookmark == "true" && b.bookmark == "false") ? -1 : 0);
+
+
+
+    if(data2.length ==0){
+        return <Loading/>
+    }
 
 
     return (
