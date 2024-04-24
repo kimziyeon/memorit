@@ -60,15 +60,12 @@ function AddNote({ setAddNote }: any) {
         e.preventDefault();
     }
 
-    const colorClick = () => {
+    const colorClick = (colorNum :number) => {
         // console.log('click'+colorPalette[0])
         // console.log(colorPalette[colorNum])
 
         setColor(colorPalette[colorNum])
-        setColorNum(colorNum + 1)
-        if (colorNum == 5) {
-            setColorNum(0)
-        }
+
     }
 
     const bookMarkClick = () => {
@@ -132,11 +129,11 @@ function AddNote({ setAddNote }: any) {
                     </form>
 
                     <div className='addMemoC3' style={{ backgroundColor: color }}>
-                        <div className='colorPalette' onClick={() => { colorClick() }}>
-                            <img src="/images/btn_blue.png" alt="btn_blue" />
-                            <img src="/images/btn_green.png" alt="btn_green" />
-                            <img src="/images/btn_yellow.png" alt="btn_yellow" />
-                            <img src="/images/btn_red.png" alt="btn_red" />
+                        <div className='colorPalette'>
+                            <img src="/images/btn_blue.png" alt="btn_blue"  onClick={() => { colorClick(1) }} />
+                            <img src="/images/btn_green.png" alt="btn_green"  onClick={() => { colorClick(2) }} />
+                            <img src="/images/btn_yellow.png" alt="btn_yellow"  onClick={() => { colorClick(3) }} />
+                            <img src="/images/btn_red.png" alt="btn_red"   onClick={() => { colorClick(4) }} />
 
                         </div>
                         <div className='bookmark' onClick={() => { bookMarkClick() }}>
