@@ -84,7 +84,6 @@ function AddNote({ setAddNote }: any) {
         setDetail(true)
     }
 
-
     const detailDelete = () => {
         setPreImg('')
         setDetail(false)
@@ -134,7 +133,11 @@ function AddNote({ setAddNote }: any) {
 
                     <div className='addMemoC3' style={{ backgroundColor: color }}>
                         <div className='colorPalette' onClick={() => { colorClick() }}>
-                            <img src="/images/colorp.png" alt="colorp" />
+                            <img src="/images/btn_blue.png" alt="btn_blue" />
+                            <img src="/images/btn_green.png" alt="btn_green" />
+                            <img src="/images/btn_yellow.png" alt="btn_yellow" />
+                            <img src="/images/btn_red.png" alt="btn_red" />
+
                         </div>
                         <div className='bookmark' onClick={() => { bookMarkClick() }}>
                             <img src={bookMark == true ? "/images/bookmark_large_on.png" : "/images/bookmark_large_off.png"} alt="bookmarkLarge" />
