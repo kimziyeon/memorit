@@ -3,9 +3,40 @@ import "@/comp/style/common.scss";
 import Header from "@/comp/UIUX/Header";
 
 export const metadata: Metadata = {
+
   metadataBase: new URL('https://memorit-jiyeon.vercel.app/'),
-  title: "Memo-Rit 메모릿",
-  description: "Memo & To do List",
+  title: "Memo-Rit",
+  description: "Memo & To do List - 메모릿",
+  openGraph: {
+    title: 'Memo-Rit',
+    description: 'Memo & To do List - 메모릿',
+    images: '/memorit.png'
+  },
+  twitter: {
+    title: 'Memo-Rit',
+    description: 'Memo & To do List - 메모릿',
+    images: '/memorit.png'
+  },
+  icons: {
+    icon: '/favicon-16x16.png',
+    apple: '/favicon-16x16.png',
+    shortcut: '/memorit.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/favicon-32x32.png',
+    }
+  },
+  keywords: ['memorit', '메모릿', 'next', '메모','투두리스트'],
+  authors: [{ name: '김지연' }],
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+    }
+  }
 };
 
 export default function RootLayout({
