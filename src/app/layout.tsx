@@ -3,7 +3,7 @@ import "@/comp/style/common.scss";
 import Header from "@/comp/UIUX/Header";
 
 export const metadata: Metadata = {
-
+  manifest: "/manifest.json",
   metadataBase: new URL('https://memorit-jiyeon.vercel.app/'),
   title: "Memo-Rit",
   description: "Memo & To do List - 메모릿",
