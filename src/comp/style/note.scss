@@ -69,6 +69,7 @@ main {
                 position: relative;
                 border-radius: 10px;
                 box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+                cursor: pointer;
 
                 >p {
                     width: 23px;
@@ -103,6 +104,7 @@ main {
                 border-radius: 10px;
                 box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
                 overflow: hidden;
+                cursor: pointer;
 
                 .mContents {
                     font-size: 14px;
@@ -217,7 +219,7 @@ main {
             top: 0;
             left: 0;
             z-index: 1;
-
+            cursor: pointer;
         }
 
         .addMemo {
@@ -250,7 +252,7 @@ main {
                         form {
                             img {
                                 vertical-align: middle;
-
+                                cursor: pointer;
                             }
 
                             input {}
@@ -266,6 +268,7 @@ main {
                     color: #D2D2D4;
                     font-weight: bold;
                     font-size: 20px;
+                    cursor: pointer;
                 }
             }
 
@@ -340,6 +343,7 @@ main {
 
                     img {
                         margin-right: 5px;
+                        cursor: pointer;
                     }
                 }
 
@@ -358,7 +362,9 @@ main {
                     right: 8%;
                     top: 15%;
 
-                    img {}
+                    img {
+                        cursor: pointer;
+                    }
                 }
             }
         }
