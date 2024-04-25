@@ -8,12 +8,13 @@ import AddNote from './AddNote';
 import NoteComp from './NoteComp';
 import NoteSearch from './NoteSearch';
 import Loading from './Loading';
+import { NoteData } from '../../type/datatype';
 
 function Note() {
 
     const {data2, dataFetch2} = useStore();
     const [addNote, setAddNote] = useState(false);
-    const [searchData, setSearchData] = useState([]);
+    const [searchData, setSearchData] = useState<NoteData[]>([]);
 
 
     
@@ -34,13 +35,13 @@ function Note() {
     },[data2])
 
 
-    const sortedData = [...searchData].sort((a: any, b: any) => {
+    const sortedData = [...searchData].sort((a, b) => {
         const dateA = new Date(a.date.replace(/\./g, '/'));
         const dateB = new Date(b.date.replace(/\./g, '/'));
         return dateB.getTime() - dateA.getTime();
     });
 
-    const sorteDataBook = sortedData.sort((a:any, b:any) => (a.bookmark == "true" && b.bookmark == "false") ? -1 : 0);
+    const sorteDataBook = sortedData.sort((a, b) => (a.bookmark == "true" && b.bookmark == "false") ? -1 : 0);
 
 
 
@@ -63,7 +64,7 @@ function Note() {
                     <div className='memoGray'></div>
                 </div>
 
-                {sorteDataBook.map((obj:any, k:number)=>(
+                {sorteDataBook.map((obj, k)=>(
                     
                     <NoteComp obj={obj}  key={k}/>
                 ))
