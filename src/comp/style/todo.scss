@@ -221,7 +221,9 @@ main {
                         margin: 5px 0 10px;
                         padding-left: 20px;
 
-                        .pastCheck {}
+                        .pastCheck {
+                            cursor: pointer;
+                        }
 
                         p {
                             color: #D2D2D4;
@@ -230,6 +232,8 @@ main {
                         .pastDelete{
                             width: 15px;
                             margin-left: 10px;
+                            cursor: pointer;
+
                         }
                     }
                 }
