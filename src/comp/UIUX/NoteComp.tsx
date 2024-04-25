@@ -4,15 +4,9 @@ import React from 'react';
 import '../style/note.scss';
 import { useEffect, useState, useRef } from 'react';
 import NoteView from './NoteView';
-import { NoteData } from '../../type/datatype';
 
 
-interface NoteCompProps {
-    obj: NoteData;
-}
-
-
-function NoteComp({ obj }: NoteCompProps) {
+function NoteComp({ obj }: any) {
 
     const [noteView, setNoteView] = useState(false);
 

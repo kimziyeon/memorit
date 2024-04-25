@@ -5,18 +5,12 @@ import '../style/note.scss';
 import { useStore } from '../store/note_store';
 import { useEffect, useState, useRef } from 'react';
 import UpdateUpload from '../service/UpdateUpload';
+
 import { ref, listAll, getDownloadURL, deleteObject, uploadBytes } from "firebase/storage";
 import { storage } from "@/lib/firebase";
-import { NoteData } from '../../type/datatype';
 
 
-interface NoteVeiwProps {
-    obj: NoteData;
-    setNoteView: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-
-function NoteView({ setNoteView, obj }: NoteVeiwProps) {
+function NoteView({ setNoteView, obj }: any) {
     // console.log(obj)
 
     let { data2, dataFetch2 } = useStore();
