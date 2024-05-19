@@ -21,3 +21,18 @@ My SQL을 이용해 서버를 구축, CRUD 데이터를 연결하고 FireBase �
 <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black"/>
 <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/>
+
+<h4> 🔥 트러블슈팅</h4>
+<p>
+  가장 기초적인 CRUD 프로젝트인만큼 서버 연결, 데이터를 추가하고 변경하는 과정에 시간을 많이 썼습니다.
+</p>
+<p>
+  <img src="https://github.com/kimziyeon/memorit/assets/149509089/97548dc5-951b-43e2-bdc8-254a4d642e74"/>
+</p>
+  
+<h4> 💬 후기</h4>
+<p>
+  내가 공부도 하면서 무언가를 내 손으로 만들었다는 뿌듯함이 제일 컸습니다.
+  '이게 편할까?', '이 버튼이 굳이 필요할까?' 다른 메모장들은 어떻게 진행되는지 찾아보고, 참고하는 과정에서 ui/ux를 많이 수정했습니다.
+</p>
+  
