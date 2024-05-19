@@ -2,7 +2,7 @@
 <p> 👤 Personal Project</p>
 <p> 🗓️ 2024.03 ~ 2024.04</p>
 <p>
-  🔗 <a href="https://memorit-jiyeon.vercel.app/" target="_blank"> https://memorit-jiyeon.vercel.app/</a>
+  🔗 <a href="https://memorit-jiyeon.vercel.app/" target="_blank"> 배포 링크 바로가기</a>
 </p>
 
 <p>
