@@ -39,9 +39,8 @@
   date가 없다면 그대로 date를 출력하고, 이미 date가 있다면 date를 출력하지 않는다.<br/>
 </p>
 <p>
-  <img src="https://github.com/kimziyeon/memorit/assets/149509089/ec4eeee6-da30-43eb-8578-967d4d2f6121"/>
+  <img src="https://github.com/kimziyeon/memorit/assets/149509089/b54ead71-c80c-4b78-8cee-87b8c8d9d530"/>
 </p>
-
   
 <h4> 💬 후기</h4>
 <p>
