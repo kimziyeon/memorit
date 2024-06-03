@@ -6,9 +6,8 @@
 </p>
 
 <p>
-  <img src="https://github.com/kimziyeon/memorit/assets/149509089/97548dc5-951b-43e2-bdc8-254a4d642e74"/>
+  <img src="https://github.com/kimziyeon/memorit/assets/149509089/b0005a29-721b-4044-ba42-4b2bf893c202"/>
 </p>
-
 <p>
 <b>기억과 기록, 현재를 기억하고 기록하기 위한 프로젝트</b> <br/>
 가장 기초적인 CRUD 프로젝트로, My SQL을 이용해 서버를 구축, 데이터를 연결하고 FireBase 스토리지로 이미지 첨부/삭제 기능을 적용하였습니다<br/>
